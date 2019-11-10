@@ -1,0 +1,66 @@
+!PARAMETERS
+rndnumbersPerSeed: 1000000
+seeds:
+- 4721
+- 7834
+- 9385
+- 1354
+- 25773
+- 94553
+
+arrivals: 
+   F1: 2.0
+
+queues: 
+   F1: 
+      servers: 6
+      capacity: 6
+      minArrival: 0.2
+      maxArrival: 0.5
+      minService: 1.0
+      maxService: 2.0
+   F2: 
+      servers: 6
+      capacity: 8
+      minService: 6.0
+      maxService: 12.0
+   F3:
+      servers: 3
+      capacity: 4
+      minService: 4.0
+      maxService: 7.0
+   F4:
+      servers: 3
+      capacity: 4
+      minService: 5
+      maxService: 10
+
+      
+network: 
+-  source: F1
+   target: F2
+   probability: 0.57
+-  source: F1
+   target: F3
+   probability: 0.30
+-  source: F1
+   target: F4
+   probability: 0.13
+-  source: F2
+   target: F3
+   probability: 0.11
+-  source: F2
+   target: F4
+   probability: 0.06
+-  source: F3
+   target: F2
+   probability: 0.06
+-  source: F3
+   target: F4
+   probability: 0.07
+-  source: F4
+   target: F2
+   probability: 0.04
+-  source: F4
+   target: F3
+   probability: 0.03
